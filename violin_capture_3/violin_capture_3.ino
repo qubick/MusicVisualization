@@ -46,173 +46,173 @@ int buttonState34 = 0;
 
 void setup() {
   // initialize the LED pin as an output:
-  pinMode(ledPin1, OUTPUT);   
-  pinMode(ledPin2, OUTPUT);  
-  pinMode(ledPin3, OUTPUT);  
-  pinMode(ledPin4, OUTPUT);
-  pinMode(ledPin5, OUTPUT); 
+  pinMode(ledRed,    OUTPUT);   
+  pinMode(ledYellow, OUTPUT);  
+  pinMode(ledGreen,  OUTPUT);  
+  pinMode(ledBlue,   OUTPUT);
+  pinMode(ledViolet, OUTPUT); 
   
   servo1.attach(A0);
   
   // initialize the pushbutton pin as an input:
-  pinMode(buttonPin1, INPUT);
-  pinMode(buttonPin2, INPUT);
-  pinMode(buttonPin3, INPUT);
-  pinMode(buttonPin4, INPUT);
-  
-  pinMode(buttonPin5, INPUT);
-  pinMode(buttonPin6, INPUT);
-  pinMode(buttonPin7, INPUT);
-  pinMode(buttonPin8, INPUT);
-  
-  pinMode(buttonPin9, INPUT);
-  pinMode(buttonPin10, INPUT);
   pinMode(buttonPin11, INPUT);
   pinMode(buttonPin12, INPUT);
+  pinMode(buttonPin13, INPUT);
+  pinMode(buttonPin14, INPUT);
+  
+  pinMode(buttonPin21, INPUT);
+  pinMode(buttonPin22, INPUT);
+  pinMode(buttonPin23, INPUT);
+  pinMode(buttonPin24, INPUT);
+  
+  pinMode(buttonPin31, INPUT);
+  pinMode(buttonPin32, INPUT);
+  pinMode(buttonPin33, INPUT);
+  pinMode(buttonPin34, INPUT);
   
   Serial.begin(9600);  
 }
 
 void loop(){
   // read the state of the pushbutton value:
-  buttonState1 = analogRead(buttonPin1);
-  buttonState2 = analogRead(buttonPin2);
-  buttonState3 = analogRead(buttonPin3);
-  buttonState4 = analogRead(buttonPin4);
-  
-  buttonState5 = analogRead(buttonPin5);
-  buttonState6 = analogRead(buttonPin6);
-  buttonState7 = analogRead(buttonPin7);
-  buttonState8 = analogRead(buttonPin8);
-  
-  buttonState9 = analogRead(buttonPin9);
-  buttonState10 = analogRead(buttonPin10);
   buttonState11 = analogRead(buttonPin11);
   buttonState12 = analogRead(buttonPin12);
+  buttonState13 = analogRead(buttonPin13);
+  buttonState14 = analogRead(buttonPin14);
+  
+  buttonState21 = analogRead(buttonPin21);
+  buttonState22 = analogRead(buttonPin22);
+  buttonState23 = analogRead(buttonPin23);
+  buttonState24 = analogRead(buttonPin24);
+  
+  buttonState31 = analogRead(buttonPin31);
+  buttonState32 = analogRead(buttonPin32);
+  buttonState33 = analogRead(buttonPin33);
+  buttonState34 = analogRead(buttonPin34);
 
-  if(buttonState1==0 && buttonState2==0 && buttonState3==0 && buttonState4==0){
-    digitalWrite(ledPin1, LOW); 
-    digitalWrite(ledPin2, LOW); 
-    digitalWrite(ledPin3, LOW); 
-    digitalWrite(ledPin4, LOW); 
-    digitalWrite(ledPin5, LOW); 
+  if(buttonState11==0 && buttonState12==0 && buttonState13==0 && buttonState14==0){
+    digitalWrite(ledRed,    LOW); 
+    digitalWrite(ledYellow, LOW); 
+    digitalWrite(ledGreen,  LOW); 
+    digitalWrite(ledBlue,   LOW); 
+    digitalWrite(ledViolet, LOW); 
     
     servo1.write(0);
     
   } else{
-    if(buttonState1<threshold){ //threashold
+    if(buttonState11<threshold){ //threashold
       servo1.write(15);
-      digitalWrite(ledPin1, HIGH);
+      digitalWrite(ledRed, HIGH);
       delay(500);
     }else{
       servo1.write(0);
-      digitalWrite(ledPin1, LOW); 
+      digitalWrite(ledRed, LOW); 
     }
     
-    if(buttonState2<threshold){
-      servo1.write(30);
-      digitalWrite(ledPin2, HIGH);
-      delay(500);
-    }else{
-      servo1.write(0);
-      digitalWrite(ledPin2, LOW); 
-    }
-    
-    if(buttonState3<threshold){
-      servo1.write(45);
-      digitalWrite(ledPin3, HIGH);
-      delay(500);
-    }else{
-      servo1.write(0);
-      digitalWrite(ledPin3, LOW); 
-    }
-    
-    if(buttonState4<threshold){
-      servo1.write(60);
-      digitalWrite(ledPin4, HIGH);
-      delay(500);
-    }else{
-      servo1.write(0);
-      digitalWrite(ledPin4, LOW);
-    }
-      
-    if(buttonState5<threshold){
-      servo1.write(75);
-      digitalWrite(ledPin5, HIGH);
-      delay(500);
-    }else{
-      servo1.write(0);
-      digitalWrite(ledPin5, LOW);
-    }
-      
-    if(buttonState6<threshold){
-      servo1.write(90);
-      digitalWrite(ledPin1, HIGH);
-      delay(500);
-    }else{
-      servo1.write(0);
-      digitalWrite(ledPin1, LOW);
-    }
-      
-    if(buttonState7<threshold){
-      servo1.write(105);
-      digitalWrite(ledPin2, HIGH);
-      delay(500);
-    }else{
-      servo1.write(0);
-      digitalWrite(ledPin2, LOW);
-    }
-      
-    if(buttonState8<threshold){
-      servo1.write(120);
-      digitalWrite(ledPin3, HIGH);
-      delay(500);
-    }else{
-      servo1.write(0);
-      digitalWrite(ledPin3, LOW);
-    }
-      
-    if(buttonState9<threshold){
-      servo1.write(135);
-      digitalWrite(ledPin4, HIGH);    
-      delay(500);
-    }else{
-      servo1.write(0);
-      digitalWrite(ledPin4, LOW);
-    }
-    
-    if(buttonState10<threshold){
-      servo1.write(150);
-      digitalWrite(ledPin5, HIGH);
-      delay(500);
-    }else{
-      servo1.write(0);
-      digitalWrite(ledPin5, LOW);
-    }
-      
-    if(buttonState11<threshold){
-      servo1.write(165);
-      digitalWrite(ledPin1, HIGH);
-      delay(500);
-    }else{
-      servo1.write(0);
-      digitalWrite(ledPin1, LOW);
-    }
-      
     if(buttonState12<threshold){
-      servo1.write(180);
-      digitalWrite(ledPin2, HIGH);
+      servo1.write(30);
+      digitalWrite(ledYellow, HIGH);
       delay(500);
     }else{
       servo1.write(0);
-      digitalWrite(ledPin2, LOW);
+      digitalWrite(ledYellow, LOW); 
+    }
+    
+    if(buttonState13<threshold){
+      servo1.write(45);
+      digitalWrite(ledGreen, HIGH);
+      delay(500);
+    }else{
+      servo1.write(0);
+      digitalWrite(ledGreen, LOW); 
+    }
+    
+    if(buttonState14<threshold){
+      servo1.write(60);
+      digitalWrite(ledBlue, HIGH);
+      delay(500);
+    }else{
+      servo1.write(0);
+      digitalWrite(ledBlue, LOW);
+    }
+      
+    if(buttonState21<threshold){
+      servo1.write(75);
+      digitalWrite(ledViolet, HIGH);
+      delay(500);
+    }else{
+      servo1.write(0);
+      digitalWrite(ledViolet, LOW);
+    }
+      
+    if(buttonState22<threshold){
+      servo1.write(90);
+      digitalWrite(ledRed, HIGH);
+      delay(500);
+    }else{
+      servo1.write(0);
+      digitalWrite(ledRed, LOW);
+    }
+      
+    if(buttonState23<threshold){
+      servo1.write(105);
+      digitalWrite(ledYellow, HIGH);
+      delay(500);
+    }else{
+      servo1.write(0);
+      digitalWrite(ledYellow, LOW);
+    }
+      
+    if(buttonState24<threshold){
+      servo1.write(120);
+      digitalWrite(ledGreen, HIGH);
+      delay(500);
+    }else{
+      servo1.write(0);
+      digitalWrite(ledGreen, LOW);
+    }
+      
+    if(buttonState31<threshold){
+      servo1.write(135);
+      digitalWrite(ledBlue, HIGH);    
+      delay(500);
+    }else{
+      servo1.write(0);
+      digitalWrite(ledBlue, LOW);
+    }
+    
+    if(buttonState32<threshold){
+      servo1.write(150);
+      digitalWrite(ledViolet, HIGH);
+      delay(500);
+    }else{
+      servo1.write(0);
+      digitalWrite(ledViolet, LOW);
+    }
+      
+    if(buttonState33<threshold){
+      servo1.write(165);
+      digitalWrite(ledRed, HIGH);
+      delay(500);
+    }else{
+      servo1.write(0);
+      digitalWrite(ledRed, LOW);
+    }
+      
+    if(buttonState34<threshold){
+      servo1.write(180);
+      digitalWrite(ledYellow, HIGH);
+      delay(500);
+    }else{
+      servo1.write(0);
+      digitalWrite(ledYellow, LOW);
     }
   }  
     
-  Serial.println(buttonState1);
-  Serial.println(buttonState2);
-  Serial.println(buttonState3);
-  Serial.println(buttonState4);
+  Serial.println(buttonState11);
+  Serial.println(buttonState12);
+  Serial.println(buttonState13);
+  Serial.println(buttonState14);
   
   Serial.println();
   delay(1000);
